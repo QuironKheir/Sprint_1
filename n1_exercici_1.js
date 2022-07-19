@@ -1,12 +1,11 @@
-
-// Exercici 1
+// Nivell 1 - Exercici 1
 // Crea una funció que mostri per consola el nom d'usuari/ària 
 // en invocar-la passant-li el nom com a paràmetre.
 
 var user_var = 'Andrés Jonathan Enríquez Jiménez';
 
-function read_consol(name){
+function print_user(name){
     console.log(name);
 }
 
-read_consol(user_var);
+print_user(user_var);
