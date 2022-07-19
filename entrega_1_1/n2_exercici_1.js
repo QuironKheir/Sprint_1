@@ -6,6 +6,7 @@
 var first_name = "Andrés";
 var last_name = "Enríquez";
 
+// Using a literal template
 function print_user(first, last){
     console.log(`My name is ${first} and my last name is ${last}`);
 }
