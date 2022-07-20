@@ -1,16 +1,39 @@
+// ********************************************************************************************* //
+//     ______  ______      ______   ____     ______   ____     ____               __    __       //
+//    /\__  _\/\__  _\    /\  _  \ /\  _`\  /\  _  \ /\  _`\  /\  _`\    /'\_/`\ /\ \  /\ \      //
+//    \/_/\ \/\/_/\ \/    \ \ \L\ \\ \ \/\_\\ \ \L\ \\ \ \/\ \\ \ \L\_\ /\      \\ `\`\\/'/      //
+//       \ \ \   \ \ \     \ \  __ \\ \ \/_/_\ \  __ \\ \ \ \ \\ \  _\L \ \ \__\ \`\ `\ /'       //
+//        \_\ \__ \ \ \     \ \ \/\ \\ \ \L\ \\ \ \/\ \\ \ \_\ \\ \ \L\ \\ \ \_/\ \ `\ \ \       //
+//        /\_____\ \ \_\     \ \_\ \_\\ \____/ \ \_\ \_\\ \____/ \ \____/ \ \_\\ \_\  \ \_\      //
+//        \/_____/  \/_/      \/_/\/_/ \/___/   \/_/\/_/ \/___/   \/___/   \/_/ \/_/   \/_/      //
+//                                                                                               //
+//    By:   Andres Jonathan Enriquez Jimenez           Specialization:   < BE Nodejs  >          //
+//       <enriquezjimenez.andrese@gmail.com>           File:             entrega_1_3.js          //
+//                                                     Created:          < 2022/07/19 >          //
+//                                                                                               //
+// ********************************************************************************************* //
+let s = 0; while (s < 10) {console.log(" "); s++;};
+// Descripció;
+// Treballarem amb funcions i templates literals, elements fonamentals en la programació amb 
+// JavaScript ;)
+//
+//
+//
+// Utilitza l'intèrpret de node en tots els casos.
+
 console.log("//////////////////////////////////////////////////////////////////");
 console.log("Nivell 1 - Exercici 1");
 console.log(" ");
 // Crea una funció que mostri per consola el nom d'usuari/ària 
 // en invocar-la passant-li el nom com a paràmetre.
 
-var nom_usuari = 'Andrés Jonathan Enríquez Jiménez';                // Declare a variable as a string.
+var nom_usuari = 'Andrés Jonathan Enríquez Jiménez';      // Declare a variable as a string.
 
-function print_user(name){                                          // Create a function that prints by console.
-    console.log(name);
+function print_user(name){                                // Create a function that prints by 
+    console.log(name);                                    // console.
 };
 
-print_user(nom_usuari);                                             // Run the function.
+print_user(nom_usuari);                                   // Run the function.
 
 
 console.log("//////////////////////////////////////////////////////////////////");
