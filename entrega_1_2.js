@@ -33,7 +33,8 @@ console.log(" ");
 
 // self-invoking function        
 //          (<function>)(<parameter>, <parameter>, ...)
-console.log(((x, y) => (x + y))(4, 6));                    // [Function (anonymous)]
+console.log(((x, y) => (x + y))(4, 6));
+// console.log((x, y) => (x + y)(4, 6));  <-- [Function (anonymous)] falto un ().
 
 console.log("//////////////////////////////////////////////////////////////////");
 console.log("Nivell 2 - Exercici 1");
