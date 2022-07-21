@@ -31,16 +31,9 @@ console.log(" ");
 //          * param => expression
 //          * (param1, paramN) => {expression};
 
-// Opcion_1
-console.log((x, y) => (x + y)(4, 6));                    // [Function (anonymous)]
-
-// Opcion_2
-var num_1 = 4;
-var num_2 = 2;
-
-let arrow = ((x, y) => {
-    console.log(x + y);
-})(num_1, num_2);
+// self-invoking function        
+//          (<function>)(<parameter>, <parameter>, ...)
+console.log(((x, y) => (x + y))(4, 6));                    // [Function (anonymous)]
 
 console.log("//////////////////////////////////////////////////////////////////");
 console.log("Nivell 2 - Exercici 1");
@@ -54,6 +47,7 @@ let array_func = (parametre_rebut) => {
     return objecte;
 }
 console.log(array_func("Catalina"));
+
 
 console.log("//////////////////////////////////////////////////////////////////");
 console.log("Nivell 2 - Exercici 2");
