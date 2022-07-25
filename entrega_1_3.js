@@ -255,7 +255,7 @@ getEmployee(ide1)
 
 
 ide2 = 2
-getEmployee(2)
+getEmployee(ide2)
     .then(function(name){
         console.log(`Nivell 3 - Exercici 1: id = 2 ${name}`);
         return getSalary(employees[ide2 - 1]);
