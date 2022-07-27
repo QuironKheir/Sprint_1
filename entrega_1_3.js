@@ -21,7 +21,7 @@ let s = 0; while (s < 10) {console.log(" "); s++;};
 //
 // Utilitza l'intèrpret de node en tots els casos.
 
-// //////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////////////
 // "Nivell 1 - Exercici 1"
 // Crea una funció que retorni una Promise que invoqui la funció resolve() o reject() que rep. 
 // Invoca-la passant-li les dues funcions de manera que imprimeixin un missatge diferent depenent 
@@ -52,10 +52,7 @@ miPromesa(false)
     .then(function(msg1){console.log(msg1);})
     .catch(function(msg2){console.log(msg2);});
 
-
-
-
-// //////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////////////
 // Nivell 1 - Exercici 2
 // Crea una arrow function que rebi un paràmetre i una funció callback i li passi a la funció un 
 // missatge o un altre (que s'imprimirà per consola) en funció del paràmetre rebut.
@@ -85,8 +82,7 @@ arrowFunc(par, callback);                           //   parametro de la fucnion
 par = false;                                        // * Variamos el parametro
 arrowFunc(par, callback);
 
-
-// //////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////////////
 // Nivell 2 - Exercici 1
 // Donats els objectes employees i salaries, crea una arrow function getEmployee() que retorni una 
 // Promise efectuant la cerca en l'objecte pel seu id.
@@ -117,7 +113,7 @@ let getEmployee = id => {
     return new Promise((resolve, reject) => {
         let object = employees.find(obj => obj.id === id);
         if (object) {
-            resolve(object.name);
+            resolve(object);
         } else {
             reject(`ID not found`);
         }
@@ -125,157 +121,57 @@ let getEmployee = id => {
 };
 
 getEmployee(1)
-    .then(function(user){
-        console.log(`Nivell 2 - Exercici 1: id = 1   ${user}`);
-    })
-    .catch(function(msg){
-        console.log(`Nivell 2 - Exercici 1: id = 1   ${msg}`);
-    });
+    .then(user => console.log(`Nivell 2 - Exercici 1: id = 1   ${user.name}`))
+    .catch(msg => console.log(`Nivell 2 - Exercici 1: id = 1   ${msg}`));
 
 getEmployee(2)
-    .then(function(user){
-        console.log(`Nivell 2 - Exercici 1: id = 2   ${user}`);
-    })
-    .catch(function(msg){
-        console.log(`Nivell 2 - Exercici 1: id = 2   ${msg}`);
-    });
+    .then(user => console.log(`Nivell 2 - Exercici 1: id = 2   ${user.name}`))
+    .catch(msg => console.log(`Nivell 2 - Exercici 1: id = 2   ${msg}`));
 
-getEmployee(3)
-    .then(function(user){
-        console.log(`Nivell 2 - Exercici 1: id = 3   ${user}`);
-    })
-    .catch(function(msg){
-        console.log(`Nivell 2 - Exercici 1: id = 3   ${msg}`);
-    });
-
-getEmployee(4)
-    .then(function(user){
-        console.log(`Nivell 2 - Exercici 1: id = 4   ${user}`);
-    })
-    .catch(function(msg){
-        console.log(`Nivell 2 - Exercici 1: id = 4   ${msg}`);
-    });
-
+// /////////////////////////////////////////////////////////////////////////////////////////////////
 // Nivell 2 - Exercici 2
 // Crea una altra arrow function getSalary() similar a l'anterior que rebi com a paràmetre un objecte 
 // employee i retorni el seu salari.
 
-let getSalary = (objecte_Employee) => {
+let getSalary = (employee) => {
     return new Promise((resolve, reject) => {
-        let  id = (Object.values(objecte_Employee))[0];
-        let object = salaries.find(obj => obj.id === id);
+        let object = salaries.find(obj => obj.id === employee.id);
         if (object) {
-            resolve(object.salary);
+            resolve(object);
         } else {
-            reject('The ID doesn`t exit!');
+            reject(' Salary does not exist in the database.');
         }
     });
-};
-   
-getSalary(employees[0])
-    .then(function(salary){
-        console.log(`Nivell 2 - Exercici 1: employees[0] = ${salary}`);
-    })
-    .catch(function(msg){c
-        onsole.log(`Nivell 2 - Exercici 1: ${msg}`);
-    });
+}
 
 getSalary(employees[1])
-    .then(function(salary){
-        console.log(`Nivell 2 - Exercici 1: employees[1] = ${salary}`);
-    })
-    .catch(function(msg){
-        console.log(`Nivell 2 - Exercici 1: ${msg}`);
-    });
+    .then(money => console.log(`Nivell 2 - Exercici 2: employees[1] = ${money.salary}`))
+    .catch(msg => console.error(`Nivell 2 - Exercici 2: ${msg}`));
 
 getSalary(employees[2])
-    .then(function(salary){
-        console.log(`Nivell 2 - Exercici 1: employees[2] = ${salary}`);
-    })
-    .catch(function(msg){
-        console.log(`Nivell 2 - Exercici 1: ${msg}`);
-    });
+    .then(money => console.log(`Nivell 2 - Exercici 2: employees[2] = ${money.salary}`))
+    .catch(msg => console.error(`Nivell 2 - Exercici 2: ${msg}`));
 
-//     console.log("//////////////////////////////////////////////////////////////////");
-//     console.log("Nivell 2 - Exercici 3");
-//     console.log(" ");
+// /////////////////////////////////////////////////////////////////////////////////////////////////
+// Nivell 2 - Exercici 3
 // Invoca la primera funció getEmployee() i després getSalary() niant l'execució de les dues promises 
 // de manera que es retorni per la consola el nom de l'empleat/da i el seu salari.
 
-
-let id1 = 1
+let id1 = 1;
 getEmployee(id1)
-    .then(function(name){
-        console.log(`Nivell 2 - Exercici 3: id = 1    ${name}`);
-        return getSalary(employees[id1 - 1]);
-    })
-    .then(function(msg){
-        console.log(`Nivell 2 - Exercici 3: id = 1    ${msg}`);
-    });
+    .then(employee => {
+        getSalary(employee)
+            .then(res => console.log(`Nivell 2 - Exercici 3: id = 1 The user is: ${employee.name },`, `and the salary is: ${res.salary}`));
+        })
 
-let id2 = 2
-getEmployee(id2)
-    .then(function(name){
-        console.log(`Nivell 2 - Exercici 3: id = 2    ${name}`);
-        return getSalary(employees[id2 - 1]);
-    })
-    .then(function(msg){
-        console.log(`Nivell 2 - Exercici 3: id = 2    ${msg}`);
-    });
-
-let id3 = 3
-getEmployee(id3)
-    .then(function(name){
-        console.log(`Nivell 2 - Exercici 3: id = 3    ${name}`);
-        return getSalary(employees[id3 - 1]);
-    })
-    .then(function(msg){
-        console.log(`Nivell 2 - Exercici 3: id = 3    ${msg}`);
-    });
-
-//     console.log("//////////////////////////////////////////////////////////////////");
-//     console.log("Nivell 3 - Exercici 1");
-//     console.log(" ");
+// /////////////////////////////////////////////////////////////////////////////////////////////////
+// Nivell 3 - Exercici 1
 // Fixa un element catch a la invocació del nivell anterior que capturi qualsevol error i el mostri per 
 // la consola.
 
-
-ide1 = 1
-getEmployee(ide1)
-    .then(function(name){
-        console.log(`Nivell 3 - Exercici 1: id = 1 ${name}`);
-        return getSalary(employees[ide1 - 1]);
-    })
-    .then(function(msg){
-        console.log(`Nivell 3 - Exercici 1: id = 1 ${msg}`);
-    })
-    .catch(function(error){
-        console.log(error);
-    });
-
-
-ide2 = 2
-getEmployee(ide2)
-    .then(function(name){
-        console.log(`Nivell 3 - Exercici 1: id = 2 ${name}`);
-        return getSalary(employees[ide2 - 1]);
-    })
-    .then(function(msg){
-        console.log(`Nivell 3 - Exercici 1: id = 2 ${msg}`);
-    })
-    .catch(function(error){
-        console.log(error);
-    });
-
-ide3 = 3;
-getEmployee(ide3)
-    .then(function(name){
-        console.log(`Nivell 3 - Exercici 1: id = 3 ${name}`);
-        return getSalary(employees[ide3 - 1]);
-    })
-    .then(function(msg){
-        console.log(`Nivell 3 - Exercici 1: id = 3 ${msg}`);
-    })
-    .catch(function(error){
-        console.log(error);
-    });
+getEmployee(3)
+.then(employee => {
+    getSalary(employee)
+        .then(res => console.log(`Nivell 3 - Exercici 1: id = 3 The user is: ${employee.name },`, `and the salary is: ${res.salary}`));
+})
+.catch(err => console.error(`Nivell 3 - Exercici 1: id = 3  ${err}`));
