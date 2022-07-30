@@ -8,7 +8,7 @@
 //        \/_____/  \/_/      \/_/\/_/ \/___/   \/_/\/_/ \/___/   \/___/   \/_/ \/_/   \/_/      //
 //                                                                                               //
 //    By:   Andres Jonathan Enriquez Jimenez           Specialization:   < BE Nodejs  >          //
-//       <enriquezjimenez.andrese@gmail.com>           File:             entrega_1_4.js          //
+//       <enriquezjimenez.andrese@gmail.com>           File:             entrega_1_5.js          //
 //                                                     Created:          < 2022/07/26 >          //
 //                                                                                               //
 // ********************************************************************************************* //
