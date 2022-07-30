@@ -1,8 +1,11 @@
 # Sprint_1
-# BE - NODE JS - SPRINT_1
-## _Entrega 1.5: Node Utils_
+
 [![N|Solid](https://raw.githubusercontent.com/QuironKheir/Markdown_Complement/main/img/nodejs_icon.png)](https://nodejs.org/docs/latest-v17.x/api/d)
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/QuironKheir)
+
+# BE - NODE JS - SPRINT_1
+## _Entrega 1.5: Node Utils_
+
 ## NOTA: 
 Cal executar la següent ordre abans d'executar el programa ` npm install file-encryptor`.
 
