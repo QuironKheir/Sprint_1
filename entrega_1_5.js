@@ -275,3 +275,5 @@ async function decrypt_and_decodec_file(fitxer) {
 
 setTimeout( decrypt_and_decodec_file, 8000, 'enc_hex_file.txt');
 setTimeout( decrypt_and_decodec_file, 12000, 'enc_base64_file.txt');
+
+// Inclou un README amb instruccions per a l'execució de cada part.
